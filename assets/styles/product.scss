@@ -1,0 +1,31 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+.wrapper
+{
+  height: 100vh;
+  //background: url("/assets/img/bkg4.jpg");
+background-size: contain;
+
+}
+
+.wrapper1
+{
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+
+  background: url("/assets/img/bkg4.jpg");
+  background-size: contain;
+
+  background-color: #ffffff;
+  opacity: 0.2;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #ffffff 40px ), repeating-linear-gradient( #00000055, #000000 );
+}
+
+.product-card
+{
+  margin-top: 40px;
+  min-height: 400px;
+  background-color: #fff;
+}

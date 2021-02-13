@@ -1,0 +1,33 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+
+
+.wrapper
+{
+  position: relative;
+  height: 100vh;
+}
+
+.homepage-container
+{
+  background: url("/assets/img/main.jpg");
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+}
+
+.homepage-container:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  transition: background .5s;
+  background: rgba(0,0,0, .5);
+}
+.homepage-container:hover:before {
+  /*for demo, move this line up if you want to darken it as default*/
+}
+
+
+
