@@ -1,0 +1,22 @@
+//@import "~bootstrap/scss/bootstrap.scss";
+
+.login-bar
+{
+  position: absolute;
+  right: 0;
+  top: -25px;
+  font-family: 'Montserrat';
+  font-size: 12px;
+
+  & > a
+  {
+    color: #fff!important;
+
+    &:first-of-type
+    {
+      padding-right: 20px;
+      margin-right: 20px;
+      border-right: 1px solid #fff;
+    }
+  }
+}
