@@ -1,0 +1,78 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,200&display=swap');
+
+
+body
+{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title
+{
+  font-family: 'Dancing Script', cursive;
+
+  color: #fff;
+
+  & > h3
+  {
+    font-size: 60px;
+  }
+}
+
+.main-search
+{
+  color: #fff;
+  & input
+  {
+    border-radius: 25px;
+    border: none;
+    padding: 10px 15px;
+    outline: none;
+    transition: ease 0.3s;
+
+
+    &.test
+    {
+      background: transparent;
+      border: 1px solid #fefefe;
+      transition: ease 0.3s;
+      color: #fff;
+
+
+      &::placeholder
+      {
+        color: #fff;
+      }
+
+      &:active, &:focus
+      {
+        background-color: #fff;
+        color: #000;
+        box-shadow: 0 0 10px #29c7e0;
+        &::placeholder
+        {
+          color: #000;
+        }
+      }
+    }
+
+    &:active, &:focus
+    {
+      background-color: #fff;
+      color: #000;
+      box-shadow: 0 0 10px #29c7e0;
+    }
+  }
+}
+
+.top-search
+{
+  //background: url("/assets/img/main.jpg");
+  position: relative;
+  height: auto;
+  background-size: cover;
+  width: 100%;
+  padding: 30px 50px;
+  background-position: center;
+  background-color: rgba(#000, 0.8);
+}

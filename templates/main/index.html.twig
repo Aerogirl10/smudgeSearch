@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('home') }}
+        {{ parent() }}
+{#        <link rel="stylesheet" href="{{ asset('scss/mainpage.css') }}">#}
+
+    {% endblock %}
+
+<div class="wrapper">
+    <div class="container-fluid homepage-container">
+
+        <div class="row h-100 align-items-center text-center">
+            <div class="col-8 m-auto">
+                <div class="row">
+                    <div class="col-12 title">
+                        <h3 class="mb-5">Smugde Search</h3>
+                    </div>
+                    <div class="col main-search">
+                        <div class="row">
+                            <div class="col">
+                                <input class="test" type="text" placeholder="Pen">
+                            </div>
+                            <div class="col align-self-center">
+                                <span>
+                                    OR
+                                </span>
+                            </div>
+                            <div class="col">
+                                <input type="text" placeholder="Ink">
+                            </div>
+                            <div class="col align-self-center">
+                                <span>
+                                    OR
+                                </span>
+                            </div>
+                            <div class="col">
+                                <input type="text" placeholder="Paper">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('home') }}
+
+    {% endblock %}
+{% endblock %}
+

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('product') }}
+        {{ parent() }}
+        {# <link rel="stylesheet" href="{{ asset('scss/mainpage.css') }}"> #}
+
+    {% endblock %}
+
+
+    <div class="wrapper1"></div>
+    <div class="wrapper">
+        <div class="container-fluid product-page-container">
+            <div class="row h-100 align-items-center text-center">
+            <div class="col-8 mx-auto">
+                {{ form(form) }}
+            </div>
+
+
+                {% include 'main/top-search.html.twig' %}
+
+                <div class="col-8 mx-auto product-card py-5 my-5">
+                    <div class="row">
+
+                        <div class="col">
+                            {% include 'product/product-card.html.twig' %}
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('product') }}
+
+    {% endblock %}
+{% endblock %}
+
