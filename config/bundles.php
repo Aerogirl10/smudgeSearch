@@ -16,4 +16,6 @@ return [
     EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle::class => ['all' => true],
     Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['dev' => true, 'test' => true],
     SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle::class => ['all' => true],
+    Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true]
+    /* according to: https://www2.itroom.fr/vichuploader-avec-symfony-et-docker/ up fixes following "There is no extension able to load the configuration for « vich_uploader"*/
 ];

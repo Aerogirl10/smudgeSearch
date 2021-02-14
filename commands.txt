@@ -1,0 +1,21 @@
+php bin/console doctrine:fixtures:load
+- load textures after adding next user
+
+
+symfony console make:entity
+- make entity
+
+
+php bin/console make:migration
+- migration after changes/new entities
+
+*(php bin/console doctrine:migrations:migrate) - next
+
+
+
+
+php bin/console doctrine:schema:update --force
+
+
+// generates getter/setter methods
+ php bin/console make:entity --regenerate App
