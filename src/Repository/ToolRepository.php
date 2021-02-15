@@ -20,13 +20,18 @@ class ToolRepository extends ServiceEntityRepository
     }
 
     public function findToolByModel($value){
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.model = :val')
-            ->setParameter('val', $value)
+        $qb = $this->createQueryBuilder('t')
+            ->andWhere('t.model LIKE :val')
+//            ->setParameter('val', '%'.$value.'%')
+            ->setParameter('val', '%'.addcslashes($value, '%_').'%')
             ->orderBy('t.model', 'ASC')
             ->getQuery()
-            ->getResult();
+            ->execute();
+        //dump($qb);
+        return $qb;
     }
+
+    //TODO FindToolByBrand
 
     // /**
     //  * @return Tool[] Returns an array of Tool objects

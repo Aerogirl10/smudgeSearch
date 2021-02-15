@@ -16,7 +16,11 @@
         <div class="container-fluid product-page-container">
             <div class="row h-100 align-items-center text-center">
             <div class="col-8 mx-auto">
+                {{ form(brandForm) }}
+                {% if form %}
+
                 {{ form(form) }}
+                {% endif %}
             </div>
 
 
@@ -26,7 +30,15 @@
                     <div class="row">
 
                         <div class="col">
-                            {% include 'product/product-card.html.twig' %}
+{#                            {% if toolResults %}#}
+{#                                {% include 'main/search-result.html.twig' %}#}
+{#                                {% else %}#}
+{#                            {% include 'product/product-card.html.twig' %}#}
+{#                            {% endif %}#}
+                            <div id="the-basics">
+                                <input class="typeahead" type="text" placeholder="States of USA">
+                            </div>
+
                         </div>
 
                     </div>
@@ -42,5 +54,45 @@
         {{ encore_entry_script_tags('product') }}
 
     {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        /* const $ = require('jquery');
+         global.$ = global.jQuery = $;*/
+        $(document).ready(function () {
+            var brands = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.whitespace,
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+
+                remote: {
+                    //todo: url as data-attr (make formType), move
+                    url: "{{ path('search') }}/%QUERY%",
+                    wildcard: '%QUERY%',
+                    filter: function (brands){
+                        return $.map(brands, function (brand) {
+                            return {
+                                brand_id: brand.id,
+                                brand_name: brand.name
+                            }
+                        });
+                    }
+                }
+            })
+            brands.initialize();
+
+            //todo: id
+            $('#brand_select_text').typeahead(
+                {
+                    hint: true
+                },
+                {
+                    name: 'brands',
+                    source: brands.ttAdapter(),
+                    display: 'brand_name'
+                }
+            )
+            console.log("lao")
+        });
+
+    </script>
 {% endblock %}
 

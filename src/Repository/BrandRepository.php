@@ -19,6 +19,18 @@ class BrandRepository extends ServiceEntityRepository
         parent::__construct($registry, Brand::class);
     }
 
+    public function findByName($value){
+        $qb = $this->createQueryBuilder('b')
+            ->andWhere('b.name LIKE :val')
+//            ->setParameter('val', '%'.$value.'%')
+            ->setParameter('val', '%'.addcslashes($value, '%_').'%')
+            ->orderBy('b.name', 'ASC')
+            ->getQuery()
+            ->execute();
+        //dump($qb);
+        return $qb;
+    }
+
     // /**
     //  * @return Brand[] Returns an array of Brand objects
     //  */
